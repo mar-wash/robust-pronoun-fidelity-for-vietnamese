@@ -24,6 +24,8 @@ BASE_HEADERS = [
     "confuse_pronoun",
 ]
 HUMAN_HEADERS = [*BASE_HEADERS, "human_sentence"]
+GENERATOR_DIR = Path(__file__).resolve().parent
+
 CONDITION_NAMES = [
     "eo_task",
     "eo_ep_task",
@@ -259,12 +261,12 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate a Vietnamese sampled_for_humans-style TSV."
     )
-    parser.add_argument("--tasks", type=Path, default=Path("tasks_vi.xlsx"))
-    parser.add_argument("--contexts", type=Path, default=Path("context_vi.xlsx"))
+    parser.add_argument("--tasks", type=Path, default=GENERATOR_DIR / "tasks_vi.xlsx")
+    parser.add_argument("--contexts", type=Path, default=GENERATOR_DIR / "context_vi.xlsx")
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("sampled_for_humans_vietnamese.tsv"),
+        default=GENERATOR_DIR / "sampled_for_humans_vietnamese.tsv",
     )
     parser.add_argument("--count", type=int, default=600)
     parser.add_argument("--template-seed", type=int, default=13)
