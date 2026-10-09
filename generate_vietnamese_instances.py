@@ -259,12 +259,12 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate a Vietnamese sampled_for_humans-style TSV."
     )
-    parser.add_argument("--tasks", type=Path, default=Path("Instance-generator/tasks_vi.xlsx"))
-    parser.add_argument("--contexts", type=Path, default=Path("Instance-generator/context_vi.xlsx"))
+    parser.add_argument("--tasks", type=Path, default=Path("tasks_vi.xlsx"))
+    parser.add_argument("--contexts", type=Path, default=Path("context_vi.xlsx"))
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("Instance-generator/sampled_for_humans_vietnamese.tsv"),
+        default=Path("sampled_for_humans_vietnamese.tsv"),
     )
     parser.add_argument("--count", type=int, default=600)
     parser.add_argument("--template-seed", type=int, default=13)
